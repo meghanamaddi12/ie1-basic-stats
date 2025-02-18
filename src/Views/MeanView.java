@@ -7,10 +7,10 @@ import javax.swing.text.JTextComponent;
 
 public class MeanView implements View {
 
+	//Instance variables
 	double mean;
 	JTextField jtfMean;
 	String name;
-
 
 	public MeanView() {
 		mean = 0;
@@ -25,7 +25,6 @@ public class MeanView implements View {
 
     //Set text
     jtfMean.setText("" + mean);
-
 	}
 
 	@Override
@@ -36,9 +35,9 @@ public class MeanView implements View {
 	@Override
 	public JTextComponent show() {
 		return jtfMean;
-
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}

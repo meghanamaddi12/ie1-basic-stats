@@ -7,10 +7,10 @@ import javax.swing.text.JTextComponent;
 
 public class MedianView implements View {
 
+	//Instance variables
 	double median;
 	JTextField jtfMedian;
 	String name;
-
 
 	public MedianView() {
 		median = 0;
@@ -23,8 +23,8 @@ public class MedianView implements View {
 	public void update(ArrayList<Double> numbers) {
 		median = BasicStats.median(BasicStats.getArrayDouble(numbers));
 
-    //Set text
-    jtfMedian.setText("" + median);
+		//Set text
+		jtfMedian.setText("" + median);
 
 	}
 
@@ -36,9 +36,9 @@ public class MedianView implements View {
 	@Override
 	public JTextComponent show() {
 		return jtfMedian;
-
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}

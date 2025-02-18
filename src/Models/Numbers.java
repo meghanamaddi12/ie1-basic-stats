@@ -3,6 +3,7 @@ import java.util.ArrayList;
 //Model for this assignment
 public class Numbers implements Model {
 
+	//Variables for Model
 	ArrayList<Double> numbers;
 	ArrayList<View> observers;
 
@@ -11,10 +12,19 @@ public class Numbers implements Model {
 		observers = new ArrayList<View>();
 	}
 
+	@Override
 	public void addObserver(View view) {
 		observers.add(view);
 	}
 
+	@Override
+	public void addData(Double num) {
+		numbers.add(num);
+
+		updateViews();
+	}
+
+	@Override
 	public void updateViews() {
 
 		for (View view: observers) {
@@ -39,14 +49,11 @@ public class Numbers implements Model {
 		updateViews();
 	}
 
+	@Override
 	public ArrayList<Double> getData() {
 		return numbers;
 	}
 
-	public void addData(Double num) {
-		numbers.add(num);
 
-		updateViews();
-	}
 
 }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
 
 import javax.swing.JTextField;
 import javax.swing.text.JTextComponent;
@@ -7,6 +5,7 @@ import javax.swing.text.JTextComponent;
 
 public class ModeView implements View {
 
+  //Instance variables
   double mode;
   JTextField jtfMode;
   String name;
@@ -19,32 +18,34 @@ public class ModeView implements View {
   }
 
   @Override
-	public void update(ArrayList<Double> numbers) {
-		mode = BasicStats.mode(BasicStats.getArrayDouble(numbers));
+  public void update(ArrayList<Double> numbers) {
+    mode = BasicStats.mode(BasicStats.getArrayDouble(numbers));
 
     //Set text
     jtfMode.setText("" + mode);
 
-	}
+  }
 
-	@Override
-	public void reset() {
-		jtfMode.setText("");
-	}
+  @Override
+  public void reset() {
+    jtfMode.setText("");
+  }
 
-	@Override
-	public JTextComponent show() {
-		// TODO Auto-generated method stub
-		return jtfMode;
+  @Override
+  public JTextComponent show() {
+    return jtfMode;
+  }
 
-	}
-
-	public String getName() {
+  @Override
+  public String getName() {
 		return name;
 	}
 
 	public double getMode() {
 		return mode;
 	}
+
+
+
 
 }
